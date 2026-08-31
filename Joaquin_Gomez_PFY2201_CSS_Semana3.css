@@ -1,0 +1,239 @@
+:root {
+    --color-fondo: #14161c;
+    --color-fondo-tarjeta: #1e2129;
+    --color-primario: #e63946;
+    --color-secundario: #f1c40f;
+    --color-texto: #eaeaea;
+    --color-texto-suave: #b5b8c0;
+    --color-borde: #2e323d;
+    --fuente-titulos: "Segoe UI", "Trebuchet MS", sans-serif;
+    --fuente-texto: "Verdana", "Arial", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    font-family: var(--fuente-texto);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* --- Header --- */
+header {
+    background-color: var(--color-fondo-tarjeta);
+    padding: 32px 24px;
+    border-bottom: 3px solid var(--color-primario);
+    text-align: center;
+}
+
+header h1 {
+    font-family: var(--fuente-titulos);
+    font-size: 2.2em;
+    color: var(--color-primario);
+    margin-bottom: 8px;
+}
+
+header p {
+    color: var(--color-texto-suave);
+    font-size: 1.1em;
+}
+
+/* --- Navegación --- */
+nav {
+    background-color: var(--color-fondo);
+    border-bottom: 1px solid var(--color-borde);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    padding: 14px 0;
+}
+
+nav ul li a {
+    color: var(--color-texto);
+    text-decoration: none;
+    font-family: var(--fuente-titulos);
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav ul li a:hover {
+    background-color: var(--color-primario);
+    color: #ffffff;
+}
+
+main section {
+    padding: 40px 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+main section h2 {
+    font-family: var(--fuente-titulos);
+    font-size: 1.6em;
+    color: var(--color-secundario);
+    border-bottom: 2px solid var(--color-borde);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+}
+
+#inicio p {
+    color: var(--color-texto-suave);
+    max-width: 700px;
+}
+
+#productos ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.juego {
+    background-color: var(--color-fondo-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 16px;
+    width: 100%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.juego:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-primario);
+}
+
+.juego h3 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-texto);
+    font-size: 1.15em;
+    margin-bottom: 10px;
+}
+
+.juego img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 12px;
+    border: 1px solid var(--color-borde);
+}
+
+.juego p {
+    color: var(--color-texto-suave);
+    font-size: 0.92em;
+    margin-bottom: 8px;
+}
+
+.juego:nth-child(1) {
+    border-top: 3px solid #e63946;
+}
+
+.juego:nth-child(2) {
+    border-top: 3px solid #f1c40f;
+}
+
+.juego:nth-child(3) {
+    border-top: 3px solid #4ea8de;
+}
+
+#contacto p {
+    color: var(--color-texto-suave);
+    margin-bottom: 10px;
+}
+
+#contacto a {
+    color: var(--color-secundario);
+}
+
+#contacto ul {
+    list-style: none;
+    display: flex;
+    gap: 16px;
+    margin-top: 8px;
+}
+
+#contacto ul li a {
+    color: var(--color-texto);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#contacto ul li a:hover {
+    color: var(--color-primario);
+}
+
+/* --- Footer --- */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-fondo-tarjeta);
+    border-top: 1px solid var(--color-borde);
+    text-align: center;
+    padding: 18px;
+    color: var(--color-texto-suave);
+    font-size: 0.9em;
+}
+
+/* --- Diseño responsivo: tablet --- */
+@media (max-width: 768px) {
+    header {
+        padding: 24px 16px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    main section {
+        padding: 28px 16px;
+    }
+
+    #productos ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --- Diseño responsivo: móvil --- */
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 0;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    header p {
+        font-size: 0.95em;
+    }
+
+    main section {
+        padding: 20px 16px;
+    }
+
+    #productos ul {
+        grid-template-columns: 1fr;
+    }
+
+    #contacto ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+}
